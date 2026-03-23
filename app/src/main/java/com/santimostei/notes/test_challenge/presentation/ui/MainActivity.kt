@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -30,12 +31,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TestchallengeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
+                Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
                     val navController = rememberNavController()
 
                     NavHost(navController = navController, startDestination = "login") {
                         composable("login") {
                             LoginScreen(
+                                modifier = Modifier.padding(paddingValues),
                                 viewModel = viewModel,
                                 onLoginSuccess = {
                                     navController.navigate("home") {
@@ -46,7 +48,10 @@ class MainActivity : ComponentActivity() {
                         }
                         composable("home") {
                             val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-                            HomeScreen(uiState.user?.username.orEmpty())
+                            HomeScreen(
+                                modifier = Modifier.padding(paddingValues),
+                                username = uiState.user?.username.orEmpty()
+                            )
                         }
                     }
                 }
