@@ -1,4 +1,4 @@
-package com.santimostei.notes.test_challenge.data
+package com.santimostei.notes.test_challenge.data.repositories
 
 import com.santimostei.notes.test_challenge.domain.LoginBody
 import com.santimostei.notes.test_challenge.domain.Result

@@ -1,8 +1,8 @@
-package com.santimostei.notes.test_challenge.data
+package com.santimostei.notes.test_challenge.data.datasource
 
 import com.santimostei.notes.test_challenge.domain.User
 
-object Users {
+object LoginDataSource {
 
     val userList = listOf(
         User(

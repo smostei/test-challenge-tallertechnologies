@@ -1,6 +1,6 @@
-package com.santimostei.notes.test_challenge.data
+package com.santimostei.notes.test_challenge.data.repositories
 
-import com.santimostei.notes.test_challenge.data.Users.isValidUser
+import com.santimostei.notes.test_challenge.data.datasource.LoginDataSource.isValidUser
 import com.santimostei.notes.test_challenge.domain.LoginBody
 import com.santimostei.notes.test_challenge.domain.Result
 import com.santimostei.notes.test_challenge.domain.User
